@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Generate G-code</title>
+        <script src="GcodeMaker_spiral.js"></script>
+        <style type="text/css">
+            input {
+                display: block;
+                width: 50px;
+                float: left;
+                margin-bottom: 5px;
+            }
+            label {
+                display: block;
+                width: 160px;
+                float: left;
+                text-align: right;
+                padding-right: 5px;
+            }
+            br {
+                clear: left;
+            }
+        </style>
+    </head>
+    <body>
+        予想所要時間： 約 <span id="duration"></span>min.<br>
+        <textarea id="output_textarea" wrap="off" style="width:250px; height:200px" readonly></textarea><br>
+        <button type="button" tabindex="2" onclick="output()" style="width:150px;">OK</button>
+        <button type="button" tabindex="0" onclick="save()" style="width:100px;margin-bottom:10px;">保存[chrome]</button><br>
+            <label for="x_length">面出し範囲 X：</label>
+            <input type="text" id="x_length" tabindex="1" onfocus="this.select()">[mm]<br>
+            <label for="y_length">Y：</label>
+            <input type="text" id="y_length" tabindex="1" onfocus="this.select()">[mm]<br>
+            <label for="diam">スピンドル直径：</label>
+            <input type="text" id="diam" tabindex="1" onfocus="this.select()">[mm]<br>   
+            <label for="move_speed">水平送り速度：</label>
+            <input type="text" id="move_speed" tabindex="1" onfocus="this.select()">[mm/min]<br>
+            <label for="descend_speed">鉛直送り速度：</label>
+            <input type="text" id="descend_speed" tabindex="1" onfocus="this.select()">[mm/min]<br>
+            <label for="motor_rpm">スピンドル回転数：</label>
+            <input type="text" id="motor_rpm" step="100" tabindex="1" onfocus="this.select()">[rpm]<br>
+            <label for="depth">切削深さ：</label>
+            <input type="text" id="depth" step="0.1" tabindex="1" onfocus="this.select()">[mm]<br>
+            <label for="height">空中移動時高さ：</label>
+            <input type="text" id="height" tabindex="1" onfocus="this.select()">[mm]<br>
+    </body>
+</html>
